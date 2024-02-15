@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connemara Central Library</title>
+    <style>
+        
+        #header {
+            text-align: center;
+            font-size: 36px;
+            color: #4CAF50;
+            text-shadow: 2px 2px 4px #000000;
+            background-image: url(Images/824578.jpg);
+        }
+
+        .login-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #333;
+            text-decoration: none;
+            
+        }
+
+        #description {
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #161414;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #0b0b0bc8;
+        }
+
+        th {
+            background-color:#000000;
+            
+        }
+
+        #fixed-image {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        #registration-form {
+            position: fixed;
+            right: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <link rel="stylesheet" href="external.css">
+</head>
+<body>
+    
+    <div id="header" style="font-family: 'Courier New', Courier, monospace;">Connemara Central Library</div>
+    <a href="#" class="login-link">Signup/Login</a>
+
+    
+    <p id="description">Welcome to Connemara Central Library. Explore our vast collection of books across different genres.</p>
+
+    
+    <table>
+        <tr>
+            <th>Stream</th>
+            <th>Image</th>
+        </tr>
+        <tr>
+            <td>Fiction</td>
+            <td><img src="./Images/abdd34b7977e43e45b4b85f926a84ff5.jpg" alt="Fiction" height="120px" width="200px"></td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td><img src="./Images/SPACE.jpg" alt="Science" height="120px" width="200"></td>
+        </tr>
+        <tr>
+            <td>History</td>
+            <td><img src="./Images/king-throne-illustration-image-generative-ai_800563-7624.avif" alt="History" height="120px" width="200px"></td>
+        </tr>
+    </table>
+
+    
+    <div id="fixed-image"><img src="./Images/regi.jpg" alt="Register" height="50px" width="300"></div>
+
+    
+    <div id="registration-form">
+        <h2>Library Registration Form</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    
+    <div id="good-books">
+        <h2>Good Books</h2>
+        <div id="book-carousel">
+            <img src="./Images/dune.jpg" alt="Book 1">
+            <img src="./Images/Best-Historical-Fiction-novels-of-This-year-1.webp" alt="Book 2" height="715px" width="474px">
+            <img src="./Images/movie.jpg" alt="Book 3" height="715px" width="474px">
+        </div>
+    </div>
+
+    <script>
+        
+        const bookCarousel = document.getElementById('book-carousel');
+        const images = bookCarousel.getElementsByTagName('img');
+        let currentIndex = 0;
+
+        function showNextBook() {
+            images[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.display = 'block';
+        }
+
+        setInterval(showNextBook, 3000);
+    </script>
+</body>
+</html>
